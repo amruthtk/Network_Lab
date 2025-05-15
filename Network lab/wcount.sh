@@ -1,9 +1,10 @@
 #to count number of words and lines in a file
-if [ $# -gt 1 ]
+if [ $# -ne  1 ]
 then
-echo "Syntax is <$0> [<filename>]"
-exit 1
+  echo "Syntax is <$0> [<filename>]"
+  exit 1
 fi
+
 
 flag=0
 if [ $# -eq 1 ]

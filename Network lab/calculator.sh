@@ -1,6 +1,9 @@
 if [ $# -ne 3 ]
 then
-echo "The syntax is <$0> <no1> <no2> <no3>"
+
+echo "The syntax is <$0> <no1> <operator> <no3>"
+
+
 exit 1
 else
 case $2 in

@@ -1,22 +1,12 @@
-#display message from system using time
 
 tm=$(date +%H)
-if [ $tm -ge 5 -a $tm -le 12 ]
-then
-echo "good morning"
-elif [ $tm -ge 12 -a $tm -le 15 ]
-then
-echo "good afternoon"
-elif [ $tm -ge 16 -a $tm -le 18 ]
-then
-echo "good evening"
+
+if [ $tm -ge 5 ] && [ $tm -lt 12 ]; then
+    echo "Good morning"
+elif [ $tm -ge 12 ] && [ $tm -lt 16 ]; then
+    echo "Good afternoon"
+elif [ $tm -ge 16 ] && [ $tm -lt 19 ]; then
+    echo "Good evening"
 else
-echo "good night"
-fi 
-
-
-
-
-
-
-
+    echo "Good night"
+fi

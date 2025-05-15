@@ -12,7 +12,7 @@ a=$1;b=$3;c=$2
 else
 a=$1;b=$2;c=$3
 fi
-if [ `expr $a + $b ` -lt $c ]
+if [ `expr $a + $b ` -le $c ]
 then
 echo "triangle cant be formed"
 elif [ $a -eq $b -a $b -eq $c ]
