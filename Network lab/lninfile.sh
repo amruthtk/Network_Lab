@@ -1,6 +1,6 @@
 
 if [ $# -le 2 ]; then
-echo "Syntax: $0 <start_line> <end_line> <file>"> exit 1
+echo "Syntax: $0 <start_line> <end_line> <file>" exit 1
 fi
 n1=$1
 n2=$2
