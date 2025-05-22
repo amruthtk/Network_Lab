@@ -5,7 +5,8 @@ fi
 if grep -q "\b$2\b" "$1"  
 then
 echo "$2 deleted from $1 succesfully"
-sed -i "/\b$2\b/d" "$1"
+grep -v "$2" $1 > temp
+mv temp $1
 else
 echo "error deleting $2 from $1"
 fi
