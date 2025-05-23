@@ -55,48 +55,45 @@ do
                 fi
             fi
       done
-      ;;  
-      5) for f in *
-        do
-            if [ -f $f ]
-            then
-                u=`ls -l  $f | cut -c 3-3`
-                g=`ls -l $f | cut -c 6-6`
-                o=`ls -l $f | cut -c 9-9`
-                if [ $u = "w" -a $g = "w" -a $o = "w" ]
-                then
-                    echo $f
-                fi
-            fi
-      done
-      ;; 
-      6) for f in *
-        do
-            if [ -f $f ]
-            then
-                u=`ls -l  $f | cut -c 4-4`
-                g=`ls -l $f | cut -c 7-7`
-                o=`ls -l $f | cut -c 10-10`
-                if [ $u = "x" -a $g = "x" -a $o = "x" ]
-                then
-                    echo $f
-                fi
-            fi
-      done
-      ;; 
-      7) for f in *
-          do
-            if [ -f $f ]
-            then
-                rwx=`ls -l $f | cut -c 2-4`
-                if [ $rwx = "rwx" ]
-                then
-                    echo $f
-                fi
-            fi
-        done
-        ;;
-        8) exit 0
+      ;;
+5)
+for f in *
+do
+    if [ -f "$f" ]; then
+        u=$(ls -l "$f" | cut -c3)
+        g=$(ls -l "$f" | cut -c6)
+        o=$(ls -l "$f" | cut -c9)
+        if [ "$u" = "w" ] && [ "$g" = "w" ] && [ "$o" = "w" ]; then
+            echo "$f"
+        fi
+    fi
+done
+;;
+6)
+for f in *
+do
+    if [ -f "$f" ]; then
+        u=$(ls -l "$f" | cut -c4)
+        g=$(ls -l "$f" | cut -c7)
+        o=$(ls -l "$f" | cut -c10)
+        if [ "$u" = "x" ] && [ "$g" = "x" ] && [ "$o" = "x" ]; then
+            echo "$f"
+        fi
+    fi
+done
+;;
+7)
+for f in *
+do
+    if [ -f "$f" ]; then
+        rwx=$(ls -l "$f" | cut -c2-4)
+        if [ "$rwx" = "rwx" ]; then
+            echo "$f"
+        fi
+    fi
+done
+;;
+       8) exit 0
           ;;
       esac
 echo "Enter to continue..."
